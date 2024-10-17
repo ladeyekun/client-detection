@@ -100,24 +100,34 @@ function updateBatteryInfo(battery) {
 
 
 function getSysOS() {
-    let platform = navigator.platform.toLowerCase();
+    //let platform = navigator.platform.toLowerCase();
+    let userAgent = navigator.userAgent.toLowerCase();
+    console.log(userAgent);
     let os = '';
 
     switch (true) {
-        case platform.startsWith('win'):
+        case userAgent.includes('win'):
             os = 'Windows';
             break;
 
-        case platform.startsWith('mac'):
-            os = 'Mac/iOS';
+        case userAgent.includes('like mac'):
+            os = 'iOS';
             break;
             
-        case platform.startsWith('linux'):
-            os = 'Linux';
+        case userAgent.includes('mac'):
+            os = 'Mac/iOS';
             break;
 
+        case userAgent.includes('android'):
+            os = 'Android';
+            break;
+
+        case userAgent.includes('x11'):
+            os = 'Linux';
+            break;
+    
         default:
-            os = 'Unavailable';
+            os = 'Unknown OS';
     }
     return os;
 }
