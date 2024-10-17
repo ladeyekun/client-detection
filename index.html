@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lateef Adeyekun">
+        <meta name="description" content="My web project">
+        <meta name="keywords" content="html, css, web, seo, web development">
+        <title>Client detection</title>
+        <link rel="icon" href="./assets/img/favicon.jpg" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"
+        >
+        <link rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css" 
+            media="all"
+        >
+        <link rel="stylesheet" href="./assets/css/style.css" media="all">
+        <script src="./assets/js/app.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <div class="container grid-center height-100">
+                <section class="flex flex-direction-column gap-15">
+                    <div class="box">
+                        <div class="box-title">
+                            <h2>System</h2>
+                        </div>
+                        <div class="box-content">
+                            <p>OS: <span class="sys-os">Mac/iOS</span></p>
+                            <p>Language: <span class="sys-lang">en-CA</span></p>
+                            <p>
+                                Browser: <span class="sys-browser">FireFox</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-title">
+                            <h2>Window</h2>
+                        </div>
+                        <div class="box-content">
+                            <p>Width: <span class="window-width"></span></p>
+                            <p>Height: <span class="window-height"></span></p>
+                            <p>
+                                Orientation: 
+                                <span class="window-orientation">landscape</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-title">
+                            <h2>Battery</h2>
+                        </div>
+                        <div class="box-content">
+                            <p>Level: <span class="value">Not available</span></p>
+                            <p>Staus: <span class="value">not available</span></p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-status">
+                            <h2>Online</h2>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>
