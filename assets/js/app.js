@@ -17,6 +17,7 @@ const windowOrientation = select('.window-orientation');
 const batteryLevel = select('.battery-level');
 const batteryStatus = select('.battery-status');
 const onlineStatus = select('.box-status h2');
+const statusColor = select('.box-status');
 
 listen('load', window, () => {
     loadWindow();
@@ -54,11 +55,9 @@ function loadSystem() {
 }
 
 function updateNetworkStatus() {
-    onlineStatus.innerText = isNetworkOnline ? 'Online' : 'Offline';
-}
-
-function isNetworkOnline() {
-    return navigator.onLine ? true : false;
+    let status = navigator.onLine;
+    onlineStatus.innerText = status ? 'Online' : 'Offline';
+    statusColor.classList = status ? 'box-status online' : 'box-status offline';
 }
 
 const winWidth = () => window.innerWidth;
@@ -93,7 +92,6 @@ function loadBatteryInfo() {
 function updateBatteryInfo(battery) {
    
     batteryLevel.innerText = `${Math.round(battery.level * 100)}%`;
-
     batteryStatus.innerText = battery.charging ? 'Plugged in' : 'On battery';
 }
 

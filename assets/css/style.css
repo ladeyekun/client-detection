@@ -127,10 +127,10 @@ section {
 }
 
 .box-status {
-    background-color: #498de6;
     width: 100%;
     border-radius: 5px;
     padding: 10px 0;
+    
     h2 {
         font-size: 14px;
         font-weight: 400;
@@ -139,4 +139,12 @@ section {
         text-align: center;
         text-transform: uppercase;
     }
+}
+
+.online {
+    background-color: #16a551;
+}
+
+.offline {
+    background-color: #c22424;
 }
