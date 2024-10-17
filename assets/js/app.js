@@ -33,11 +33,11 @@ listen('orientationchange', window, () => {
     loadWindow();
 });
 
-listen('online', window, () => {
+listen('online', navigator, () => {
     updateNetworkStatus();
 });
 
-listen('offline', window, () => {
+listen('offline', navigator, () => {
     updateNetworkStatus();
 });
 
