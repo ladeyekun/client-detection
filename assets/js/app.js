@@ -49,7 +49,8 @@ function loadWindow() {
 
 function loadSystem() {
     sysLang.innerText = getSysLang();
-    //sysOS.innerText = getSysOS();
+    sysOS.innerText = getSysOS();
+    sysBrowser.innerText = getBrowser();
 }
 
 function updateNetworkStatus() {
@@ -95,11 +96,54 @@ function updateBatteryInfo(battery) {
 
 
 function getSysOS() {
-    let userAgent = navigator.userAgent;
-    console.log(userAgent);
-    const match = '/([A-Z][a-z]+)\/(\d+\.\d+)/';
-    const matches = userAgent.search(match);
-    return matches;
+    let platform = navigator.platform.toLowerCase();
+    let os = '';
+
+    switch (true) {
+        case platform.startsWith('win'):
+            os = 'Windows';
+            break;
+
+        case platform.startsWith('mac'):
+            os = 'Mac/iOS';
+            break;
+            
+        case platform.startsWith('linux'):
+            os = 'Linux';
+            break;
+
+        default:
+            os = 'Unavailable';
+    }
+    return os;
+}
+
+function getBrowser() {
+    let userAgent = navigator.userAgent.toLowerCase();
+    let browserName = '';
+
+    switch (true) {
+        case userAgent.includes('edg'):
+            browserName = 'Edge';
+            break;
+
+        case userAgent.includes('firefox'):
+            browserName = 'Firefox';
+            break;
+            
+        case userAgent.includes('chrome') && userAgent.includes('safari'):
+            browserName = 'Chrome';
+            break;
+
+        case userAgent.includes('safari') && !userAgent.includes('chrome'):
+            browserName = 'Safari';
+            break;
+
+        default:
+            browserName = 'Unknown browser';
+    }
+
+    return browserName;
 }
 
 function isNetworkOnline() {
