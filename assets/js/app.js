@@ -92,7 +92,7 @@ function loadBatteryInfo() {
 function updateBatteryInfo(battery) {
    
     batteryLevel.innerText = `${Math.round(battery.level * 100)}%`;
-    batteryStatus.innerText = battery.charging ? 'Plugged in' : 'On battery';
+    batteryStatus.innerText = battery.charging ? 'Plugged in' : 'idle';
 }
 
 
