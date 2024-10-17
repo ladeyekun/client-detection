@@ -84,10 +84,6 @@ main {
 
 section {
     width: 300px;
-
-    .box:first-child {
-        /*margin-top: 50px;*/
-    }
 }
 
 .box {
