@@ -33,11 +33,11 @@ listen('orientationchange', window, () => {
     loadWindow();
 });
 
-listen('online', navigator, () => {
+listen('online', window, () => {
     updateNetworkStatus();
 });
 
-listen('offline', navigator, () => {
+listen('offline', window, () => {
     updateNetworkStatus();
 });
 
@@ -55,6 +55,10 @@ function loadSystem() {
 
 function updateNetworkStatus() {
     onlineStatus.innerText = isNetworkOnline ? 'Online' : 'Offline';
+}
+
+function isNetworkOnline() {
+    return navigator.onLine ? true : false;
 }
 
 const winWidth = () => window.innerWidth;
@@ -146,6 +150,3 @@ function getBrowser() {
     return browserName;
 }
 
-function isNetworkOnline() {
-    return navigator.onLine ? true : false;
-}
