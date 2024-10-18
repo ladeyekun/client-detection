@@ -98,9 +98,7 @@ function updateBatteryInfo(battery) {
 
 
 function getSysOS() {
-    //let platform = navigator.platform.toLowerCase();
     let userAgent = navigator.userAgent.toLowerCase();
-    console.log(userAgent);
     let os = '';
 
     switch (true) {
