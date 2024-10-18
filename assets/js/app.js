@@ -22,8 +22,8 @@ const statusColor = select('.box-status');
 listen('load', window, () => {
     loadWindow();
     loadSystem();
-    updateNetworkStatus();
     loadBatteryInfo();
+    updateNetworkStatus();
 });
 
 listen('resize', window, () => {
